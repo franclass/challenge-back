@@ -115,7 +115,7 @@ export const createRecord: CustomReqRes = async (req, res, next) => {
       user_balance: userUpdated.current_balance,
       operation_response: result.toString(),
     });
-    res.status(200).json({ ...newRecord });
+    res.status(200).json({ ...newRecord, status: "success" });
   } catch (error) {
     next(error);
   }
